@@ -271,10 +271,10 @@ else
 		//endregion
 
         $sorting = $APPLICATION->IncludeComponent('app:list.sorting', '', [
-                'CACHE_TIME' => 3600,
-                'AVAILABLE_TYPES' => ['price', 'name'/*, 'popularity'*/],
-                'DEFAULT' => 'price_down',
-                'PRICE_TYPE' => 1,
+            'CACHE_TIME' => 3600,
+            'AVAILABLE_TYPES' => ['price', 'name', 'popularity', 'orders'],
+            'DEFAULT' => 'price_down',
+            'PRICE_TYPE' => 1,
         ]);
 
 	 	 $intSectionID = $APPLICATION->IncludeComponent(
