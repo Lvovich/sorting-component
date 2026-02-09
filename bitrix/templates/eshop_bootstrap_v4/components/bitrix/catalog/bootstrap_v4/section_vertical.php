@@ -270,13 +270,20 @@ else
 		}
 		//endregion
 
+        $sorting = $APPLICATION->IncludeComponent('app:list.sorting', '', [
+                'CACHE_TIME' => 3600,
+                'AVAILABLE_TYPES' => ['price', 'name'/*, 'popularity'*/],
+                'DEFAULT' => 'price_down',
+                'PRICE_TYPE' => 1,
+        ]);
+
 	 	 $intSectionID = $APPLICATION->IncludeComponent(
 					"bitrix:catalog.section",
 					"bootstrap_v4", array(
 						"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 						"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-						"ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
-						"ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
+						"ELEMENT_SORT_FIELD" => $sorting['FIELD'] ?: $arParams['ELEMENT_SORT_FIELD'],
+						"ELEMENT_SORT_ORDER" => $sorting['ORDER'] ?: $arParams['ELEMENT_SORT_ORDER'],
 						"ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
 						"ELEMENT_SORT_ORDER2" => $arParams["ELEMENT_SORT_ORDER2"],
 						"PROPERTY_CODE" => (isset($arParams["LIST_PROPERTY_CODE"]) ? $arParams["LIST_PROPERTY_CODE"] : []),
