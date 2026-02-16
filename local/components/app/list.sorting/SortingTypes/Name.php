@@ -34,9 +34,4 @@ class Name extends AbstractSortingType
             'ORDER' => $this->selectedOrder==='a-z' ? 'asc' : 'desc',
         ];
     }
-
-    public function getParameters(): array
-    {
-        return [];
-    }
 }

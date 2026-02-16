@@ -41,4 +41,9 @@ trait SortingTypeTrait
     {
         return $this->selectedOrder ? $this->getCode() . "_$this->selectedOrder" : '';
     }
+
+    public function getParameters(): array
+    {
+        return [];
+    }
 }

@@ -49,11 +49,6 @@ class Orders extends AbstractSortingType
         ];
     }
 
-    public function getParameters(): array
-    {
-        return [];
-    }
-
     private function getSortedIDs(): array
     {
         $res = [];

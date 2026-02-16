@@ -34,9 +34,4 @@ class Popularity extends AbstractSortingType
             'ORDER' => $this->selectedOrder==='up' ? 'desc,nulls' : 'nulls,asc',
         ];
     }
-
-    public function getParameters(): array
-    {
-        return [];
-    }
 }
